@@ -1,0 +1,25 @@
+// 1.maven-插件
+apply plugin: 'maven'
+// 2.maven-信息
+ext {
+    PUBLISH_GROUP_ID = 'com.share.module'
+    PUBLISH_ARTIFACT_ID = 'structure'
+    PUBLISH_VERSION = android.defaultConfig.versionName
+    targetSdkVersion = 24
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.0'
+    sourceCompatibilityVersion = JavaVersion.VERSION_1_8
+    targetCompatibilityVersion = JavaVersion.VERSION_1_8
+}
+// 3.maven-路径
+uploadArchives {
+    repositories.mavenDeployer {
+        def deployPath = file(getProperty('aar.deployPath'))
+        repository(url: "file://${deployPath.absolutePath}")
+        pom.project {
+            groupId project.PUBLISH_GROUP_ID
+            artifactId project.PUBLISH_ARTIFACT_ID
+            version project.PUBLISH_VERSION
+        }
+    }
+}

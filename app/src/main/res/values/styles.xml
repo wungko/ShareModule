@@ -1,0 +1,20 @@
+<resources>
+    <!--半透明背景Theme-->
+    <style name="style_dialog_share">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="@android:windowEnterAnimation">@anim/bottom_view_enter</item>
+        <item name="@android:windowExitAnimation">@anim/bottom_view_exit</item>
+    </style>
+
+    <style name="style_bottom_top" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/bottom_view_enter</item>
+        <item name="@android:windowExitAnimation">@anim/bottom_view_exit</item>
+    </style>
+</resources>
